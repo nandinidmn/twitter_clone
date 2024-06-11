@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter home page</title>
+    <link rel="stylesheet" href="t.css">
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Source+Code+Pro&display=swap" rel="stylesheet">-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <!--option menu-->
+        <div class="options-menu">
+            <div class="options-center">
+                <div class="logo">
+                    <i class="fa fa-twitter"></i>
+                </div> 
+                <div class="option">
+                    <div><a href=""><i class="fa fa-home"></i><span>Home</span></a></div>
+                    <div><a href=""><i class="fa fa-hashtag"></i><span>Explore</span></a></div>
+                    <div><a href=""><i class="fa fa-bell"></i><span>Notifications</span></a></div>
+                    <div><a href=""><i class="fa fa-envelope-o"></i><span>Messages</span></a></div>
+                    <div><a href=""><i class="fa fa-bookmark-o"></i><span>Bookmarks</span></a></div>
+                    <div><a href=""><i class="fa fa-list-alt"></i><span>Lists</span></a></div>
+                    <div><a href=""><i class="fa fa-user-o"></i><span>Profile</span></a></div>
+                    <div><a href=""><i class="fa fa-ellipsis-h"></i><span>More</span></a></div>
+                    <div><button>Tweet</button></div>
+                </div>
+            </div>
+        </div>
+        <!--end of option menu-->
+        <!--Content menu-->
+        <div class="content-menu">
+            <div class="prefer">
+                <span>
+                    <a href="">Home</a>
+                </span>
+                <!--<span>
+                    <i class="fa fa-star-o"></i>
+                </span>-->
+            </div>
+            <div class="you-tweet-other-tweet">
+                <div class="your-tweet">
+                    <div class="profile-message">
+                        <span><img src="tiger.jpg" alt=""></span>
+                        <span><input type="text" placeholder="What's happening" class="inp"></span>
+                    </div>
+                    <div class="add-extra">
+                        <div class="images-more">
+                            <span><a href=""><i class="fa fa-picture-o"></i></a></span>
+                            <span><a href=""><i class="fa fa-bars"></i></a></span>
+                            <span><a href=""><i class="fa fa-smile-o"></i></a></span>
+                            <span><a href=""><i class="fa fa-calendar-plus-o"></i></a></span>
+                        </div>
+                        <span><button class="post">Tweet</button></span>
+                    </div>
+                </div>
+
+
+
+                <div class="tab">
+                    <button
+                      class="tablinks"
+                      id="defaultOpen"
+                      onclick="switchTabs(event, 'ForYou')"
+                    >
+                      For You
+                    </button>
+                    <button class="tablinks" onclick="switchTabs(event, 'Trending')">
+                      Trending
+                    </button>
+                </div>
+
+
+
+                <div id="ForYou" class="tabcontent">
+                    <div class="other-tweet">
+                        <!--hidden-->
+                         <!--Each person-->
+                         <div class="other-tweet hide">
+                            <div class="profile-msg">
+                                <div class="others-profile">
+                                    <img src="tiger.jpg" alt="">
+                                </div>
+                                <div class="name-msg">
+                                    <span><p><b>Rahul Mehra</b> <i class="fa fa-check-circle-o"></i>@rahulmehra </p></span>
+                                    <span><small>1 second ago</small></span>
+                                    <div class="msg">
+                                        <p id="heloo"></p>
+                                    </div>
+                                </div>
+                                <div class="more-options">
+                                    <button class="del"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                    <!--<i class="fa fa-ellipsis-h"></i>-->
+                                </div>
+                            </div>
+    
+                           <!-- <div class="image-video">
+                                <img src="img1.jpg" alt="">
+                            </div>-->
+    
+                            <div class="your-reaction">
+                                <div class="comment"><i class="fa fa-comment-o"></i><p>12</p></div>
+                                <div class="retweet"><i class="fa fa-retweet"></i><p>12</p></div>
+                                <div class="like"><i class="fa fa-heart-o"></i><p>12</p></div>
+                                <div class="bookmark"><i class="fa fa-upload"></i><p>12</p></div>
+                            </div>
+    
+                        </div>
+                        <!--end of Each person-->
+                        <!--hidden-->
+                        <!--Each person-->
+                        <div class="other-tweet">
+                            <div class="profile-msg">
+                                <div class="others-profile">
+                                    <img src="tiger.jpg" alt="">
+                                </div>
+                                <div class="name-msg">
+                                    <span><p><b>Narendra Modi</b> <i class="fa fa-check-circle-o"></i>@narendramodi </p></span>
+                                    <span><small>yesterday</small></span>
+                                    <div class="msg">
+                                        <p>Hello, how are you Raj.</p>
+                                    </div>
+                                </div>
+                                <div class="more-options">
+                                    <i class="fa fa-ellipsis-h"></i>
+                                </div>
+                            </div>
+    
+                            <div class="image-video">
+                                <img src="tiger.jpg" alt="">
+                            </div>
+    
+                            <div class="your-reaction">
+                                <div class="comment"><i class="fa fa-comment-o"></i><p>12</p></div>
+                                <div class="retweet"><i class="fa fa-retweet"></i><p>12</p></div>
+                                <div class="like"><i class="fa fa-heart-o"></i><p>12</p></div>
+                                <div class="bookmark"><i class="fa fa-upload"></i><p>12</p></div>
+                            </div>
+    
+                        </div>
+                        <!--end of Each person-->
+                        <!--Each person-->
+    
+                        <div class="other-tweet">
+                            <div class="profile-msg">
+                                <div class="others-profile">
+                                    <img src="tiger.jpg" alt="">
+                                </div>
+                                <div class="name-msg">
+                                    <span><p><b>Raj Malhotra</b> <i class="fa fa-check-circle-o"></i>@rajmalhotra </p></span>
+                                    <span><small>today</small></span>
+                                    <div class="msg">
+                                        <p>Hello sir, I am fine.</p>
+                                    </div>
+                                </div>
+                                <div class="more-options">
+                                    <i class="fa fa-ellipsis-h"></i>
+                                </div>
+                            </div>
+    
+                            <div class="image-video">
+                                <img src="tiger.jpg" alt="">
+                            </div>
+    
+                            <div class="your-reaction">
+                                <div class="comment"><i class="fa fa-comment-o"></i><p>12</p></div>
+                                <div class="retweet"><i class="fa fa-retweet"></i><p>12</p></div>
+                                <div class="Like"><i class="fa fa-heart-o"></i><p>12</p></div>
+                                <div class="bookmark"><i class="fa fa-upload"></i><p>12</p></div>
+                            </div>
+    
+                        </div>
+    
+                        <!--end of Each person-->
+                        <!--Each person-->
+                        <div class="other-tweet">
+                            <div class="profile-msg">
+                                <div class="others-profile">
+                                    <img src="tiger.jpg" alt="">
+                                </div>
+                                <div class="name-msg">
+                                    <span><p><b>Narendra Modi</b> <i class="fa fa-check-circle-o"></i>@narendramodi </p></span>
+                                    <span><small>3 hours ago</small></span>
+                                    <div class="msg">
+                                        <p>Good Morning.</p>
+                                    </div>
+                                </div>
+                                <div class="more-options">
+                                    <i class="fa fa-ellipsis-h"></i>
+                                </div>
+                            </div>
+    
+                            <div class="image-video">
+                                <img src="tiger.jpg" alt="">
+                            </div>
+    
+                            <div class="your-reaction">
+                                <div class="comment"><i class="fa fa-comment-o"></i><p>12</p></div>
+                                <div class="retweet"><i class="fa fa-retweet"></i><p>12</p></div>
+                                <div class="Like"><i class="fa fa-heart-o"></i><p>12</p></div>
+                                <div class="bookmark"><i class="fa fa-upload"></i><p>12</p></div>
+                            </div>
+    
+                        </div>
+                        <!--end of Each person-->
+                        <!--Each person-->
+                        <div class="other-tweet">
+                            <div class="profile-msg">
+                                <div class="others-profile">
+                                    <img src="tiger.jpg" alt="">
+                                </div>
+                                <div class="name-msg">
+                                    <span><p><b>Elon Musk</b> <i class="fa fa-check-circle-o"></i>@elonmusk </p></span>
+                                    <span><small>1 minute ago</small></span>
+                                    <div class="msg">
+                                        <p>Peace.</p>
+                                    </div>
+                                </div>
+                                <div class="more-options">
+                                    <i class="fa fa-ellipsis-h"></i>
+                                </div>
+                            </div>
+    
+                            <div class="image-video">
+                                <img src="tiger.jpg" alt="">
+                            </div>
+    
+                            <div class="your-reaction">
+                                <div class="comment"><i class="fa fa-comment-o"></i><p>12</p></div>
+                                <div class="retweet"><i class="fa fa-retweet"></i><p>12</p></div>
+                                <div class="Like"><i class="fa fa-heart-o"></i><p>12</p></div>
+                                <div class="bookmark"><i class="fa fa-upload"></i><p>12</p></div>
+                            </div>
+    
+                        </div>
+                        <!--end of Each person-->
+                    </div>
+                  </div>
+            
+                  <div id="Trending" class="tabcontent">
+                    <h3 style="margin: 1rem">Trends In India</h3>
+                    <div class="trending-box">
+                      <p class="trending-heading">1. Earthquake</p>
+                      <p class="trending-text">#earthquake</p>
+                      <p class="trending-heading">99.99k Tweets</p>
+                    </div>
+                    <div class="trending-box">
+                      <p class="trending-heading">2. Earthquake</p>
+                      <p class="trending-text">#earthquake</p>
+                      <p class="trending-heading">99.99k Tweets</p>
+                    </div>
+                    <div class="trending-box">
+                      <p class="trending-heading">3. Earthquake</p>
+                      <p class="trending-text">#earthquake</p>
+                      <p class="trending-heading">99.99k Tweets</p>
+                    </div>
+                    <div class="trending-box">
+                      <p class="trending-heading">4. Earthquake</p>
+                      <p class="trending-text">#earthquake</p>
+                      <p class="trending-heading">99.99k Tweets</p>
+                    </div>
+                    <div class="trending-box">
+                      <p class="trending-heading">5. Earthquake</p>
+                      <p class="trending-text">#earthquake</p>
+                      <p class="trending-heading">99.99k Tweets</p>
+                    </div>
+                    <div class="trending-box">
+                      <p class="trending-heading">6. Earthquake</p>
+                      <p class="trending-text">#earthquake</p>
+                      <p class="trending-heading">99.99k Tweets</p>
+                    </div>
+                    <div class="trending-box">
+                      <p class="trending-heading">7. Earthquake</p>
+                      <p class="trending-text">#earthquake</p>
+                      <p class="trending-heading">99.99k Tweets</p>
+                    </div>
+                    <div class="trending-box">
+                      <p class="trending-heading">8. Earthquake</p>
+                      <p class="trending-text">#earthquake</p>
+                      <p class="trending-heading">99.99k Tweets</p>
+                    </div>
+                    <div class="trending-box">
+                      <p class="trending-heading">9. Earthquake</p>
+                      <p class="trending-text">#earthquake</p>
+                      <p class="trending-heading">99.99k Tweets</p>
+                    </div>
+                  </div>         
+                
+                
+            </div>
+        </div>
+        <!--end of Content menu-->
+
+
+
+
+        <!--Trending menu-->
+        <div class="trending-menu">
+            <div class="trending-center">
+                <div class="search">
+                    <input type="search" placeholder="Search Twitter">
+                    <span><i class="fa fa-search"></i></span>
+                </div>
+
+                <div class="trending">
+                    <div class="header">
+                        <p>What's happening</p>
+                    </div>
+                    <div class="trends">
+                        <!--Each trend-->
+                        <div class="trend">
+                            <div class="trend-msg">
+                                <div class="trend-name">
+                                    <p>IPL 2020.live</p>
+                                </div>
+                                <div class="subject">
+                                    <p>IPL: Sunrisers Hyderabad beat Delhi Capitals by 88 runs</p>
+                                </div>
+                                <div class="trend-with">
+                                    <p>trending with <a href="">#MIvsRCB</a>,<a href="">#SRHvsDC</a></p>
+                                </div>
+                            </div>
+                            <div class="trend-picture">
+                                <img src="tiger.jpg" alt="">
+                            </div>
+                        </div>
+                        <!--end of Each trend-->
+                        <!--Each trend-->
+                        <div class="trend">
+                            <div class="trend-msg">
+                                <div class="trend-name">
+                                    <p>IPL 2020.live</p>
+                                </div>
+                                <div class="subject">
+                                    <p>IPL: Sunrisers Hyderabad beat Delhi Capitals by 88 runs</p>
+                                </div>
+                                <div class="trend-with">
+                                    <p>trending with <a href="">#MIvsRCB</a>,<a href="">#SRHvsDC</a></p>
+                                </div>
+                            </div>
+                            <div class="trend-picture">
+                                <img src="tiger.jpg" alt="">
+                            </div>
+                        </div>
+                        <!--end of Each trend-->
+                        <!--Each trend-->
+                        <div class="trend">
+                            <div class="trend-msg">
+                                <div class="trend-name">
+                                    <p>IPL 2020.live</p>
+                                </div>
+                                <div class="subject">
+                                    <p>IPL: Sunrisers Hyderabad beat Delhi Capitals by 88 runs</p>
+                                </div>
+                                <div class="trend-with">
+                                    <p>trending with <a href="">#MIvsRCB</a>,<a href="">#SRHvsDC</a></p>
+                                </div>
+                            </div>
+                            <div class="trend-picture">
+                                <img src="tiger.jpg" alt="">
+                            </div>
+                        </div>
+                        <!--end of Each trend-->
+                        <div class="show-more">
+                            <a href="">Show more</a>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!--Follow-->
+                <br>
+                <br>
+                <div class="follow">
+               <div class="header">
+                <p>Who to Follow</p>
+               </div>
+               <div class="persons">
+                <!--each person-->
+                <div class="person">
+                <div class="person-profile">
+                    <img src="tiger.jpg" alt="">
+                </div>
+                <div class="name">
+                    <div class="main-name">
+                        <h3>Mark Zuckerberg</h3>
+                    </div>
+                    <div class="username">
+                        <p>@markzukerberg</p>
+                    </div>
+                </div>
+                <div class="send-follow-request">
+                    <button>Follow</button>
+                </div>
+            </div>
+                <!--end of each person-->
+                 <!--each person-->
+                 <div class="person">
+                    <div class="person-profile">
+                        <img src="tiger.jpg" alt="">
+                    </div>
+                    <div class="name">
+                        <div class="main-name">
+                            <h3>Elon Musk</h3>
+                        </div>
+                        <div class="username">
+                            <p>@elonmusk</p>
+                        </div>
+                    </div>
+                    <div class="send-follow-request">
+                        <button>Follow</button>
+                    </div>
+                </div>
+                    <!--end of each person-->
+                     <!--each person-->
+                <div class="person">
+                    <div class="person-profile">
+                        <img src="mahi.jpg" alt="">
+                    </div>
+                    <div class="name">
+                        <div class="main-name">
+                            <h3>Mahendra Singh Dhoni</h3>
+                        </div>
+                        <div class="username">
+                            <p>@mahendrasinghdhoni</p>
+                        </div>
+                    </div>
+                    <div class="send-follow-request">
+                        <button>Follow</button>
+                    </div>
+                </div>
+                    <!--end of each person-->
+                    <!--each person-->
+                <div class="person">
+                    <div class="person-profile">
+                        <img src="tiger.jpg" alt="">
+                    </div>
+                    <div class="name">
+                        <div class="main-name">
+                            <h3>Virat Kohli</h3>
+                        </div>
+                        <div class="username">
+                            <p>@viratkohli</p>
+                        </div>
+                    </div>
+                    <div class="send-follow-request">
+                        <button>Follow</button>
+                    </div>
+                </div>
+                    <!--end of each person-->
+                    <!--each person-->
+                <div class="person">
+                    <div class="person-profile">
+                        <img src="mark-zuckerberg.jpg" alt="">
+                    </div>
+                    <div class="name">
+                        <div class="main-name">
+                            <h3>Mark Zuckerberg</h3>
+                        </div>
+                        <div class="username">
+                            <p>@markzukerberg</p>
+                        </div>
+                    </div>
+                    <div class="send-follow-request">
+                        <button>Follow</button>
+                    </div>
+                </div>
+                    <!--end of each person-->
+               </div>
+               <div class="show-more">
+                <a href="">Show More</a>
+               </div>
+            </div> 
+                <!--end of Follow-->
+
+            </div>
+        </div>
+        <!--end of Trending menu-->
+    </div>
+
+
+    <script>
+        function switchTabs(event, tabName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(
+              " active",
+              ""
+            );
+          }
+          document.getElementById(tabName).style.display = "block";
+          event.currentTarget.className += " active";
+        }
+      </script>
+      <script>
+        document.getElementById("defaultOpen").click();
+      </script>
+      <script src="t.js"></script>
+
+  
+      
+    
+</body>
+</html>

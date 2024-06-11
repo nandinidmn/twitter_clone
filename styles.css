@@ -1,0 +1,981 @@
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    margin: 0;
+    background-color: var(--white);
+  
+    overflow: hidden;
+  }
+  
+  :root {
+    /* Color Pallete */
+    /* Pallete Used:
+    https://coolors.co/386641-6a994e-a7c957-f2e8cf-fffffc-001219 */
+  
+    --white: #fffffc;
+    --secondWhite: #f2e8cf;
+    --black: #001219;
+    --grey: #434343;
+    --primaryColor: #6a994e;
+    --secondaryColor: #a7c957;
+    --darkGreen: #386641;
+  
+    --highlightRed: #ff006e;
+    --highlightGreen: #06d6a0;
+    --highlightBlue: #3a86ff;
+    --highlightRedLowOp: #ff006f2b;
+    --highlightGreenLowOp: #06d6a02b;
+    --highlightBlueLowOp: #3a86ff2b;
+  
+    --shadowColorLight: rgba(0, 18, 25, 0.3);
+    --shadowColorDark: rgba(0, 18, 25, 0.5);
+  }
+  
+  .noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }
+  
+  .material-symbols-outlined {
+    /* Icon Settings */
+    font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+  }
+  .icon-not-filled {
+    font-variation-settings: "FILL" 0;
+  }
+  
+  /* || Reusable Classes */
+  .action-button {
+    background-color: var(--primaryColor);
+    color: var(--white);
+  
+    width: fit-content;
+    padding: 0 24px;
+  
+    line-height: 40px;
+    height: 40px;
+  
+    font-size: large;
+    border-radius: 20px;
+  
+    transition: 0.2s;
+  }
+  .action-button:hover {
+    cursor: pointer;
+    box-shadow: var(--shadowColorDark) 0px 1px 5px;
+  }
+  .action-button:active {
+    filter: brightness(92%); /* -8% */
+  }
+  
+  .icon-text-button {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 8px;
+    background-color: var(--white);
+    color: var(--black);
+  
+    width: fit-content;
+    height: 40px;
+    padding: 0 24px 0 16px;
+  
+    font-size: large;
+    line-height: 40px;
+    border-radius: 20px;
+  
+    transition: 0.2s;
+  }
+  .icon-text-button:hover {
+    filter: brightness(92%); /* -8% */
+    cursor: pointer;
+    box-shadow: var(--shadowColorLight) 0px 1px 5px;
+  }
+  .icon-text-button:active {
+    /* Pressed */
+    filter: brightness(88%); /* -12% */
+  }
+  .icon-text-button i {
+    /* Button Icon */
+    align-self: center;
+    font-size: 18px;
+  }
+  
+  .icon-button {
+    background-color: var(--white);
+    color: var(--black);
+  
+    width: fit-content;
+    height: fit-content;
+    padding: 8px;
+  
+    font-size: large;
+    border-radius: 20px;
+  
+    transition: 0.2s;
+  }
+  .icon-button:hover {
+    filter: brightness(92%); /* -8% */
+    cursor: pointer;
+    box-shadow: var(--shadowColorLight) 0px 1px 5px;
+  }
+  .icon-button:active {
+    filter: brightness(88%); /* -12% */
+  }
+  .icon-button i {
+    display: flex;
+    font-size: 30px;
+    align-items: center;
+  }
+  .icon-xlarge {
+    font-size: x-large;
+  }
+  /* Changed by JavaScript when like pressed */
+  .liked {
+    color: var(--highlightRed);
+    font-variation-settings: "FILL" 1;
+  }
+  /* Changed by JavaScript when there is text in input */
+  .disabled {
+    pointer-events: none;
+    filter: brightness(60%);
+  }
+  
+  .highlight-blue:hover {
+    background-color: var(--highlightBlueLowOp);
+    color: var(--highlightBlue);
+  }
+  .highlight-green:hover {
+    background-color: var(--highlightGreenLowOp);
+    color: var(--highlightGreen);
+  }
+  .highlight-red:hover {
+    background-color: var(--highlightRedLowOp);
+    color: var(--highlightRed);
+  }
+  
+  .text-button {
+    background-color: var(--secondWhite);
+    color: var(--black);
+  
+    width: fit-content;
+    height: 40px;
+    padding: 8px 16px;
+  
+    font-size: medium;
+    line-height: auto;
+    border-radius: 20px;
+  
+    transition: 0.2s;
+  }
+  .text-button:hover {
+    filter: brightness(92%); /* -8% */
+    cursor: pointer;
+    box-shadow: var(--shadowColorLight) 0px 1px 5px;
+  }
+  .text-button:active {
+    /* Pressed */
+    filter: brightness(88%); /* -12% */
+  }
+  
+  .profile-button {
+    background-color: var(--white);
+    color: var(--black);
+    display: grid;
+    grid-template:
+      "img name more" auto
+      "img username more" auto /
+      60px auto auto;
+    gap: 8px;
+  
+    width: fit-content;
+    height: 64px;
+    padding: 0 24px;
+  
+    font-size: large;
+    border-radius: 50px;
+  
+    transition: 0.2s;
+  }
+  .profile-button:hover {
+    filter: brightness(92%); /* -8% */
+    cursor: pointer;
+    box-shadow: var(--shadowColorDark) 0px 1px 5px;
+  }
+  .profile-button:active {
+    filter: brightness(88%); /* -12% */
+  }
+  
+  .news-button {
+    background-color: var(--white);
+    color: var(--black);
+    display: grid;
+    grid-template:
+      "page img" auto
+      "title img" auto /
+      auto auto;
+  
+    width: auto;
+    padding: 12px 24px;
+  
+    font-size: large;
+  
+    transition: 0.2s;
+  }
+  .news-button:hover {
+    filter: brightness(92%); /* -8% */
+    cursor: pointer;
+    box-shadow: var(--shadowColorDark) 0px 1px 5px;
+  }
+  .news-button:active {
+    filter: brightness(88%); /* -12% */
+  }
+  .news-button .news-page {
+    /* World News - Today */
+    grid-area: page;
+    margin: 0;
+  
+    display: flex;
+    align-items: flex-end;
+  
+    font-size: small;
+  }
+  .news-button .news-title {
+    /* Russias's........ */
+    grid-area: title;
+    margin: 0;
+  
+    font-size: medium;
+    word-wrap: break-word;
+    font-weight: bold;
+  }
+  .news-button img {
+    /* user picture */
+    grid-area: img;
+    height: 68px;
+    width: 68px;
+    object-fit: cover;
+  
+    margin-left: 12px;
+  
+    border-radius: 16px;
+    box-shadow: var(--shadowColorLight) 0px 1px 5px;
+  
+    display: flex;
+    align-self: center;
+    justify-self: right;
+  }
+  
+  .large-button {
+    padding: 8px 90px;
+    border-radius: 50px;
+  }
+  .circle-icon-button {
+    border-radius: 50px;
+    height: 24px;
+    padding: 16px;
+    margin: 0;
+    width: fit-content;
+  
+    position: relative;
+    left: -5px;
+  }
+  .circle-icon-button i {
+    position: relative;
+    border-radius: 50px;
+    top: -3px;
+  }
+  
+  .rect-button {
+    border-radius: 0;
+    width: auto;
+  }
+  .rect-button .material-symbols-outlined {
+    /* The button Icon */
+    justify-content: end;
+  }
+  .bottom-radius-normal {
+    border-radius: 0 0 20px 20px;
+  }
+  /* ... END OF REUSABLE */
+  
+  /* Is the Main container (not very responsive) */
+  .container {
+    /* Root Grid */
+    /* ~300px 1fr ~320px
+    24% 48% 28% */
+    display: grid;
+    grid-template-columns: 320px 600px 450px;
+    height: 100vh;
+    width: 80vw;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  
+  /* || Left Panel */
+  .left-panel {
+    background-color: var(--white);
+    display: grid;
+    grid-template-rows: auto; /* Top and Bottom */
+  
+    border-radius: 0 20px 20px 0; /* Right Radius */
+    border-right: 1px solid var(--black);
+  
+    height: auto;
+    overflow: hidden;
+  
+    padding: 8px 30px 8px 40px; /* 8 top and bottom, 40 left 30 right */
+  }
+  .left-panel .top {
+    /* TOP */
+    display: grid;
+    grid-template-rows: repeat(7, 45px) 60px; /* More space to action */
+  }
+  .left-panel img {
+    /* Logo */
+    height: 36px;
+    position: relative;
+    left: 6px;
+  }
+  .left-panel .bottom {
+    /* BOTTOM */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  
+    width: 250px;
+  
+    margin-bottom: 8px;
+  }
+  .left-panel .profile-button img {
+    /* user picture */
+    grid-area: img;
+    height: 60px;
+    display: flex;
+    align-self: center;
+  }
+  .left-panel .profile-button .profile-name {
+    /* luciano simoni */
+    grid-area: name;
+    font-size: medium;
+    position: relative;
+    top: 10px;
+  }
+  .left-panel .profile-button .profile-username {
+    /* @lucian.oh */
+    grid-area: username;
+    font-size: small;
+    position: relative;
+  }
+  .left-panel .profile-button .material-symbols-outlined {
+    /* the MORE btn */
+    grid-area: more;
+    display: flex;
+    align-self: center;
+    justify-self: flex-end;
+    margin-left: 8px;
+    width: fit-content;
+  }
+  
+  .left-panel-compact {
+    background-color: var(--white);
+    display: none;
+    grid-template-rows: auto; /* Top and Bottom */
+  
+    border-radius: 0 20px 20px 0;
+    border-right: 1px solid var(--black);
+  
+    height: auto;
+    overflow: none;
+  
+    padding: 8px 10px 8px 30px; /* 8 top and bottom, 40 left 30 right */
+  }
+  .left-panel-compact img {
+    /* logo */
+    height: 36px;
+    position: relative;
+    left: 6px;
+  }
+  .left-panel-compact .top-compact {
+    display: grid;
+    grid-template-rows: repeat(7, 1fr) 60px; /* More space to action */
+  
+    width: fit-content;
+  }
+  .left-panel-compact .bottom-compact {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  
+    margin-bottom: 8px;
+    width: fit-content;
+  }
+  .left-panel-compact .profile-button {
+    /* Updates the profile to only icon */
+    display: inline-block;
+    padding: 0;
+    border-radius: 50px;
+  
+    /* Centers it in the vertical parent */
+    position: relative;
+    left: -7px;
+  }
+  .left-panel-compact .profile-button img {
+    /* Center the profile image */
+    height: 60px;
+    position: relative;
+    left: 0;
+    top: 4px;
+  }
+  /* ... */
+  
+  /* || Right Panel */
+  .right-panel {
+    /* ID RIGHT-PANEL*/
+    background-color: var(--white);
+    display: grid;
+    grid-template-rows: auto;
+    gap: 18px;
+  
+    border-radius: 20px 0 0 20px;
+    border-left: 1px solid var(--black);
+  
+    /* Hide scroll bar */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    overflow-y: scroll;
+    overflow-x: hidden;
+  
+    align-content: start; /* PERFECT ALIGNED 🤌🤌 */
+  
+    padding: 0 35px 8px 25px; /* -5px on sides cause element on right panel have margin of 5px*/
+  }
+  .right-panel::-webkit-scrollbar {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    display: none;
+  }
+  
+  .search {
+    /* Stick it to the top when scrolled */
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+  
+    padding: 8px 5px;
+  
+    background-color: var(--white);
+  
+    z-index: 1001; /* Show over other elements */
+  }
+  .search-bar {
+    width: 100%;
+    height: 40px;
+  
+    background-color: var(--secondWhite);
+  
+    border: 2px solid var(--secondWhite);
+    border-radius: 50px;
+    padding: 8px 16px;
+    padding-left: 48px;
+    outline: none; /* Removes the focus border */
+  }
+  .search-bar:focus {
+    background-color: var(--white);
+  
+    border: 2px solid var(--primaryColor);
+  }
+  .search-icon {
+    position: absolute;
+    top: 16px; /* 8+8 */
+    left: 23px; /* 18+5 */
+    color: var(--grey);
+  }
+  
+  .who-to-follow,
+  .whats-happening {
+    display: grid;
+    grid-template-rows: auto;
+    gap: 8px;
+  
+    background-color: var(--secondWhite);
+  
+    border-radius: 20px;
+  
+    margin: 0 5px; /* Sides */
+  }
+  .who-to-follow .profile-button,
+  .whats-happening .news-button {
+    background-color: var(--secondWhite);
+  }
+  .who-to-follow h3, /* Both titles */
+  .whats-happening h3 {
+    /* Title */
+    margin: 0;
+    padding: 12px 16px;
+  
+    font-weight: bolder;
+    color: var(--black);
+  }
+  
+  .whats-happening .text-button {
+    /* Show more button */
+    width: auto;
+    height: auto;
+    padding: 16px;
+  
+    border-radius: 0 0 20px 20px;
+  }
+  
+  .who-to-follow .profile-button img {
+    /* user picture */
+    grid-area: img;
+    height: 60px;
+    display: flex;
+    align-self: center;
+  }
+  .who-to-follow .profile-button .profile-name {
+    /* luciano simoni */
+    grid-area: name;
+    font-size: medium;
+    position: relative;
+    top: 10px;
+  }
+  .who-to-follow .profile-button .profile-username {
+    /* @lucian.oh */
+    grid-area: username;
+    font-size: small;
+    position: relative;
+  }
+  .who-to-follow .profile-button .material-symbols-outlined {
+    /* the MORE btn */
+    grid-area: more;
+    display: flex;
+    align-self: center;
+    justify-self: flex-end;
+    margin-left: 8px;
+    width: fit-content;
+  }
+  
+  .footer {
+    color: var(--grey);
+    margin-bottom: 25px;
+  }
+  /* END OF RIGHT PANEL */
+  
+  /* MAIN */
+  .main {
+    /* ID MAIN*/
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+  
+    /* Scroll bar */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+  .main::-webkit-scrollbar {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    display: none;
+  }
+  .main .header {
+    display: flex;
+    box-sizing: border-box;
+    backdrop-filter: blur(5px);
+    background-color: #ffffffa7;
+  
+    position: fixed;
+    z-index: 2;
+  
+    width: 600px;
+    height: 50px;
+  
+    font-weight: bolder;
+    font-size: x-large;
+    align-items: center;
+  
+    margin: 0;
+    padding: 0 16px;
+  }
+  /* Mobile */
+  .main .mobile-header {
+    /* Only displayed in mobile media querie */
+    display: none;
+    box-sizing: border-box;
+  
+    z-index: 2;
+  
+    /* display: grid; ON IN MOBILE ONLY */
+    grid-auto-flow: column;
+    width: 100%;
+  
+    background-color: var(--white);
+    padding: 8px;
+  
+    position: fixed;
+  
+    justify-items: center; /*Centers logo div*/
+    align-items: center;
+  }
+  .main .mobile-header .left {
+    justify-self: left;
+  }
+  .main .mobile-header .right {
+    justify-self: right;
+  }
+  .main .mobile-header img {
+    /* Logo */
+    height: 36px;
+  }
+  
+  .main .mobile-fab {
+    display: none;
+    position: fixed;
+    box-sizing: border-box;
+  
+    background-color: var(--primaryColor);
+  
+    border-radius: 16px;
+    height: 56px;
+    width: 56px;
+  
+    box-shadow: var(--shadowColorLight) 0px 1px 5px;
+  
+    justify-content: center;
+    align-items: center;
+  
+    z-index: 2;
+    right: 16px;
+    bottom: 76px;
+  }
+  .main .mobile-fab i {
+    /* Icon */
+    font-size: 24px;
+    background-color: transparent;
+    padding: 0;
+  
+    color: var(--white);
+  
+    font-variation-settings: "FILL" 1, "wght" 1000;
+  }
+  
+  /* NAV = Home | Search | Audio | Notifications | Inbox */
+  .main .mobile-nav-bar {
+    display: none;
+    grid-auto-flow: column;
+    gap: 8px;
+  
+    justify-items: center;
+  
+    z-index: 2;
+    position: fixed;
+    bottom: 0;
+  
+    width: 100%;
+    padding: 12px 0 16px 0;
+  
+    background-color: var(--white);
+  }
+  .main .mobile-nav-bar .nav-button {
+    /* Touchable button */
+    width: minmax(48px, auto);
+    display: flex;
+    align-content: center;
+    cursor: pointer;
+  }
+  .main .mobile-nav-bar .nav-button i {
+    /* Icon */
+    display: flex;
+  
+    width: 64px;
+    height: 32px;
+    font-size: 24px;
+  
+    justify-content: center;
+    align-items: center;
+  
+    border-radius: 16px;
+    background-color: var(--white);
+  
+    font-variation-settings: "FILL" 0;
+    transition: 0.2s;
+  }
+  .main .mobile-nav-bar .nav-button .active-icon {
+    /* Menu filled */
+    font-variation-settings: "FILL" 1;
+  }
+  .main .mobile-nav-bar .nav-button:active i {
+    /* When nav-button pressed: */
+    filter: brightness(88%);
+  }
+  
+  /* End of Mobile features */
+  
+  /* Do a Treex */
+  .treex /* Create a post section */ {
+    display: grid;
+    grid-template-columns: 60px auto;
+    gap: 8px;
+  
+    padding: 50px 16px 16px 16px;
+    border-bottom: 1px solid var(--black);
+  
+    width: auto;
+    height: fit-content;
+  
+    background-color: var(--white);
+  }
+  .treex input {
+    /* Text Input */
+    font-size: larger;
+    border: none;
+    padding: 12px 0;
+  
+    width: 100%;
+    overflow-wrap: break-word;
+  
+    outline: none; /* Removes the focus border */
+  }
+  .treex textarea {
+    font-size: larger;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  
+    border: none;
+    padding: 12px 0;
+  
+    width: 100%;
+    overflow-y: hidden;
+  
+    resize: none;
+    outline: none;
+  }
+  .treex .right-content {
+    gap: 12px;
+  }
+  .treex .right-content .content-buttons {
+    display: grid;
+    grid-auto-flow: column;
+  }
+  .treex .text-button {
+    /* Treex (tweet) */
+    box-sizing: border-box;
+  
+    background-color: var(--primaryColor);
+    color: var(--white);
+  
+    font-weight: bold;
+    justify-self: end;
+  }
+  
+  /* Posts */
+  .main-content-grid {
+    /* All posts grid */
+    display: grid;
+    grid-template-rows: auto;
+    align-content: flex-start;
+  }
+  .post {
+    /* Each post */
+    display: grid;
+    grid-template-columns: 60px auto;
+    padding: 16px;
+    gap: 8px;
+  
+    width: auto;
+    height: fit-content;
+    border-bottom: 1px solid var(--black);
+  
+    background-color: var(--white);
+  }
+  .post img {
+    width: 60px;
+    border-radius: 100%;
+  }
+  .post .right-content {
+    display: grid;
+    /* justify-content: left; */
+    grid-template-rows: repeat(3, auto);
+    gap: 8px;
+  }
+  .post .user-details {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 8px;
+    justify-content: left;
+  }
+  .post .user-details .profile-name {
+    font-weight: bold;
+  }
+  .post .user-details .profile-username,
+  .post .user-details .post-timeby {
+    font-weight: lighter;
+    color: var(--darkGreen);
+  }
+  .post .right-content .content-buttons {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: stretch;
+  }
+  .post .right-content .content i {
+    width: fit-content;
+  }
+  
+  /* Types of post */
+  .post-content-text p {
+    /* What the person acctually tweets */
+    font-weight: 500;
+    margin: 0;
+  }
+  .post-content-text a {
+    color: var(--highlightBlue);
+  }
+  .post-content-image img {
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 12px;
+    image-rendering: pixelated;
+    image-resolution: 50dpi;
+  }
+  .post-content-video div {
+    margin-top: 12px;
+    /* From Embled website */
+    height: 0;
+    padding-bottom: calc(56.25%);
+    position: relative;
+    width: 100%;
+    /* End of embled */
+  }
+  .post-content-video div iframe {
+    border-radius: 20px;
+    border: 0;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Back to Content start */
+  .main-content-grid a {
+    /* Button */
+    justify-self: center;
+    margin: 16px;
+    text-decoration: none;
+  }
+  .main-content-grid a i {
+    /* Button Icon */
+    font-size: 50px;
+    transition: 0.1s;
+    font-variation-settings: "FILL" 0;
+  }
+  .main-content-grid a:active i {
+    font-variation-settings: "FILL" 1;
+  }
+  /* MAIN END */
+  
+  /* MEDIA QUERIES */
+  /* Twitter media queries */
+  /* 1275 Left menu compact */
+  /* 1095 right menu reduce ~50px */
+  /* 1000 right menu hidden - I choose 950*/
+  /* 500 full mobile - I choose 600*/
+  
+  /* 1275 Left menu compact */
+  @media screen and (max-width: 1375px) {
+    .container {
+      /* Root Grid */
+      grid-template-columns: 100px 600px 450px; /* updates the left panel size */
+    }
+    .left-panel {
+      /* Extended panel hidden to show only compact*/
+      display: none;
+    }
+    .left-panel-compact {
+      /* Compact panel (for tablets) */
+      display: grid;
+    }
+  }
+  
+  /* 1095 right menu reduce ~50px */
+  @media screen and (max-width: 1150px) {
+    .container {
+      /* Root Grid */
+      grid-template-columns: 100px 600px 350px; /* updates the right panel size */
+    }
+  }
+  
+  /* 950 right menu hidden and BorderRight to main */
+  @media screen and (max-width: 1055px) {
+    .container {
+      grid-template-columns: 100px 600px; /* Removes the right panel completilly*/
+    }
+    .right-panel {
+      /* Removes it */
+      display: none;
+    }
+  
+    .main {
+      border-right: 1px solid var(--black);
+    }
+  }
+  
+  /* 600 full mobile */
+  /* HEADER OK = Profile Icon OK | Logo OK | More OK */
+  /* MAIN = No margin OK, Floating Add button, No Treex on top OK */
+  /* NAV = Home | Search | Audio | Notifications | Inbox */
+  @media screen and (max-width: 705px) {
+    .container {
+      grid-template-columns: 1fr;
+      width: 100vw; /* No white spaces on the side */
+    }
+  
+    .left-panel-compact {
+      /* Remove left panel */
+      display: none;
+    }
+    .main .header {
+      /* Remove Menu Header */
+      display: none;
+    }
+    .treex {
+      /* Removes the Treex */
+      display: none;
+    }
+  
+    .main .mobile-header {
+      display: grid;
+    }
+    .main .mobile-fab {
+      display: flex;
+    }
+    .main .mobile-nav-bar {
+      display: grid;
+    }
+  
+    .main-content-grid {
+      /* To not be behind topNav*/
+      margin-top: 56px;
+    }
+  }
+  
+  #website-info {
+    display: flex;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    color: rgb(0, 0, 0, 0.8);
+    gap: 8px;
+  }
+  #website-info a {
+    color: rgba(30, 0, 255, 0.8);
+  }

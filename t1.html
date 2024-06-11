@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Trextter</title>
+    <link rel="icon" type="image/x-icon" href="trex.png" />
+    <script defer src="script.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="left-panel noselect">
+        <!-- Till the action button! -->
+        <div class="top">
+          <!-- Logo -->
+          <div class="logo">
+            <a href="index.html"><img src="trex.png" alt="t-rex picture" /></a>
+          </div>
+
+          <div class="icon-text-button" onclick="goTo('home')">
+            <i class="material-symbols-outlined">home</i>
+            <span>Home</span>
+          </div>
+
+          <div class="icon-text-button" onclick="goTo('explore')">
+            <i class="material-symbols-outlined">explore</i>
+            <span>Explore</span>
+          </div>
+
+          <div class="icon-text-button" onclick="goTo('notifications')">
+            <i class="material-symbols-outlined">circle_notifications</i>
+            <span>Notifications</span>
+          </div>
+
+          <div class="icon-text-button" onclick="goTo('messages')">
+            <i class="material-symbols-outlined">chat_bubble</i>
+            <span>Messages</span>
+          </div>
+
+          <div class="icon-text-button" onclick="goTo('bookmarks')">
+            <i class="material-symbols-outlined">stars</i>
+            <span>Bookmarks</span>
+          </div>
+
+          <div class="icon-text-button" onclick="goTo('lists')">
+            <i class="material-symbols-outlined">list_alt</i>
+            <span>Lists</span>
+          </div>
+
+          <div class="icon-text-button" onclick="goTo('profile')">
+            <i class="material-symbols-outlined">account_circle</i>
+            <span>Profile</span>
+          </div>
+
+          <div class="action-button large-button" onclick="openPopup('treet')">
+            <span>Treet</span>
+          </div>
+        </div>
+
+        <!-- Profile Button that sticks to the bottom -->
+        <div class="bottom">
+          <!-- No need to be grid -->
+          <div class="profile-button" onclick="openMenu('accounts-menu')">
+            <!-- Is a grid -->
+            <img
+              src="https://avatars.dicebear.com/api/adventurer/largaaaawercxz%5Cqwer.svg"
+              alt="Profile Picture"
+            />
+            <span class="profile-name">lucianoSimoni</span>
+            <span class="profile-username">@luciano</span>
+            <i class="material-symbols-outlined">more_horiz</i>
+          </div>
+        </div>
+      </div>
+
+      <div class="left-panel-compact noselect">
+        <div class="top-compact">
+          <!-- Logo -->
+          <div class="logo">
+            <a href="index.html"><img src="trex.png" alt="t-rex picture" /></a>
+          </div>
+
+          <div class="icon-button" onclick="goTo('home')">
+            <i class="material-symbols-outlined">home</i>
+          </div>
+
+          <div class="icon-button" onclick="goTo('explore')">
+            <i class="material-symbols-outlined">explore</i>
+          </div>
+
+          <div class="icon-button" onclick="goTo('notifications')">
+            <i class="material-symbols-outlined">circle_notifications</i>
+          </div>
+
+          <div class="icon-button" onclick="goTo('messages')">
+            <i class="material-symbols-outlined">chat_bubble</i>
+          </div>
+
+          <div class="icon-button" onclick="goTo('bookmarks')">
+            <i class="material-symbols-outlined">stars</i>
+          </div>
+
+          <div class="icon-button" onclick="goTo('lists')">
+            <i class="material-symbols-outlined">list_alt</i>
+          </div>
+
+          <div class="icon-button" onclick="goTo('profile')">
+            <i class="material-symbols-outlined">account_circle</i>
+          </div>
+
+          <div
+            class="action-button circle-icon-button"
+            onclick="openPopup('treet')"
+          >
+            <i class="material-symbols-outlined">send</i>
+          </div>
+        </div>
+
+        <div class="bottom-compact">
+          <!-- No need to be grid -->
+          <div class="profile-button" onclick="openMenu('accounts-menu')">
+            <!-- Is a grid -->
+            <img
+              src="https://avatars.dicebear.com/api/adventurer/largaaaawercxz%5Cqwer.svg"
+              alt="Profile Picture"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Page Content -->
+      <div class="main">
+        <div class="header">
+          <span class="noselect">Home</span>
+        </div>
+
+        <div class="mobile-header">
+          <!-- Menu -->
+          <i
+            class="icon-button icon-xlarge left material-symbols-outlined noselect"
+            >account_circle</i
+          >
+          <!-- Logo -->
+          <div class="logo noselect">
+            <a href="index.html"><img src="trex.png" alt="t-rex image" /></a>
+          </div>
+          <!-- More -->
+          <i
+            class="icon-button icon-xlarge right material-symbols-outlined noselect"
+            >menu</i
+          >
+        </div>
+
+        <div class="mobile-fab icon-button noselect">
+          <i class="material-symbols-outlined">add</i>
+        </div>
+
+        <div class="mobile-nav-bar noselect">
+          <div class="nav-button">
+            <!-- HOME -->
+            <i
+              class="active-icon material-symbols-outlined action-icon noselect"
+              >home</i
+            >
+          </div>
+          <div class="nav-button">
+            <!-- SEARCH -->
+            <i class="material-symbols-outlined noselect">search</i>
+          </div>
+          <div class="nav-button">
+            <!-- AUDIO -->
+            <i class="material-symbols-outlined noselect">mic</i>
+          </div>
+          <div class="nav-button">
+            <!-- NOTIFICATIONS -->
+            <i class="material-symbols-outlined noselect">notifications</i>
+          </div>
+          <div class="nav-button">
+            <!-- INBOX -->
+            <i class="material-symbols-outlined noselect">mail</i>
+          </div>
+        </div>
+
+        <div class="treex" id="start">
+          <img
+            class="noselect"
+            src="https://avatars.dicebear.com/api/adventurer/largaaaawercxz%5Cqwer.svg"
+          />
+          <div class="right-content">
+            <!-- <input oninput="treexInputChanged(this)" type="text" placeholder="What's happening?"> -->
+            <textarea
+              oninput="treexInputChanged(this)"
+              wrap="soft"
+              rows="2"
+              placeholder="What's happening?"
+            ></textarea>
+
+            <div class="content-buttons noselect">
+              <div>
+                <!-- Buttons -->
+                <i
+                  class="icon-button icon-xlarge material-symbols-outlined icon-not-filled"
+                  >imagesmode</i
+                >
+                <i
+                  class="icon-button icon-xlarge material-symbols-outlined icon-not-filled"
+                  >gif_box</i
+                >
+                <i
+                  class="icon-button icon-xlarge material-symbols-outlined icon-not-filled"
+                  >bar_chart</i
+                >
+                <i
+                  class="icon-button icon-xlarge material-symbols-outlined icon-not-filled"
+                  >sentiment_satisfied</i
+                >
+                <i
+                  class="icon-button icon-xlarge material-symbols-outlined icon-not-filled"
+                  >event</i
+                >
+                <i
+                  class="icon-button icon-xlarge material-symbols-outlined icon-not-filled"
+                  >location_on</i
+                >
+              </div>
+              <div id="treex" class="disabled text-button noselect">
+                <span>Treex</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="main-content-grid">
+          <div class="post">
+            <!-- Text Post -->
+            <img
+              class="noselect"
+              src="https://avatars.dicebear.com/api/adventurer/mkmksdf.svg"
+            />
+            <div class="right-content">
+              <div class="user-details">
+                <span class="profile-name">Elon Musk</span>
+                <span class="profile-username">@elonmusk</span>
+                <span class="post-timeby">• 2h</span>
+              </div>
+
+              <div class="post-content-text">
+                <p>
+                  Buying Twitter is an accelerant to creating X, the everything
+                  app
+                </p>
+              </div>
+
+              <div class="content-buttons noselect">
+                <i
+                  class="icon-button icon-xlarge highlight-blue material-symbols-outlined icon-not-filled"
+                  >chat_bubble</i
+                >
+                <i
+                  class="icon-button icon-xlarge highlight-green material-symbols-outlined icon-not-filled"
+                  >autorenew</i
+                >
+                <i
+                  onclick="changeState(this)"
+                  class="icon-button icon-xlarge like highlight-red material-symbols-outlined icon-not-filled"
+                  >favorite</i
+                >
+                <i
+                  class="icon-button icon-xlarge highlight-blue material-symbols-outlined icon-not-filled"
+                  >upload</i
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="post">
+            <!-- Text Post -->
+            <img
+              class="noselect"
+              src="https://avatars.dicebear.com/api/adventurer/sldslp.svg"
+            />
+            <div class="right-content">
+              <div class="user-details">
+                <span class="profile-name">Jojo</span>
+                <span class="profile-username">@jojooooooo</span>
+                <span class="post-timeby">• 7m</span>
+              </div>
+
+              <div class="post-content-text">
+                <p>
+                  It's going to make a time when I'm sitting in this chair
+                  picing to study why I only work at the base of the pressure
+                </p>
+              </div>
+
+              <div class="content-buttons noselect">
+                <i
+                  class="icon-button icon-xlarge highlight-blue material-symbols-outlined icon-not-filled"
+                  >chat_bubble</i
+                >
+                <i
+                  class="icon-button icon-xlarge highlight-green material-symbols-outlined icon-not-filled"
+                  >autorenew</i
+                >
+                <i
+                  onclick="changeState(this)"
+                  class="icon-button icon-xlarge like highlight-red material-symbols-outlined icon-not-filled"
+                  >favorite</i
+                >
+                <i
+                  class="icon-button icon-xlarge highlight-blue material-symbols-outlined icon-not-filled"
+                  >upload</i
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="post">
+            <!-- Image Post -->
+            <img
+              class="noselect"
+              src="https://avatars.dicebear.com/api/adventurer/spoke.svg"
+            />
+            <div class="right-content">
+              <div class="user-details">
+                <span class="profile-name">Spoke</span>
+                <span class="profile-username">@spoke</span>
+                <span class="post-timeby">• 23m</span>
+              </div>
+
+              <div class="post-content-text post-content-image">
+                <p>Am I a joke to you????</p>
+                <img
+                  src="https://pbs.twimg.com/media/FeY8J8pagAEgZlm?format=jpg&name=small"
+                />
+              </div>
+
+              <div class="content-buttons noselect">
+                <i
+                  class="icon-button icon-xlarge highlight-blue material-symbols-outlined icon-not-filled"
+                  >chat_bubble</i
+                >
+                <i
+                  class="icon-button icon-xlarge highlight-green material-symbols-outlined icon-not-filled"
+                  >autorenew</i
+                >
+                <i
+                  onclick="changeState(this)"
+                  class="icon-button icon-xlarge like highlight-red material-symbols-outlined icon-not-filled"
+                  >favorite</i
+                >
+                <i
+                  class="icon-button icon-xlarge highlight-blue material-symbols-outlined icon-not-filled"
+                  >upload</i
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="post">
+            <!-- Video Post -->
+            <img
+              class="noselect"
+              src="https://yt3.ggpht.com/ytc/AMLnZu8Wa17oWAqpDTMC63e4bSLpnPKE2dkp7BopkcYEgZk=s48-c-k-c0x00ffffff-no-rj"
+            />
+            <div class="right-content">
+              <div class="user-details">
+                <span class="profile-name">William Osman</span>
+                <span class="profile-username">@williamOsman</span>
+                <span class="post-timeby">• 23m</span>
+              </div>
+
+              <div class="post-content-text post-content-video">
+                <p>raccoons</p>
+                <div>
+                  <iframe
+                    allow="gyroscope;"
+                    src="https://www.youtube-nocookie.com/embed/6O9E8xRazTc"
+                    title="YouTube video player"
+                    loading="lazy"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+
+              <div class="content-buttons noselect">
+                <i
+                  class="icon-button icon-xlarge highlight-blue material-symbols-outlined icon-not-filled"
+                  >chat_bubble</i
+                >
+                <i
+                  class="icon-button icon-xlarge highlight-green material-symbols-outlined icon-not-filled"
+                  >autorenew</i
+                >
+                <i
+                  onclick="changeState(this)"
+                  class="icon-button icon-xlarge like highlight-red material-symbols-outlined icon-not-filled"
+                  >favorite</i
+                >
+                <i
+                  class="icon-button icon-xlarge highlight-blue material-symbols-outlined icon-not-filled"
+                  >upload</i
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="post">
+            <!-- Text Post -->
+            <img
+              class="noselect"
+              src="https://avatars.dicebear.com/api/adventurer/icaaros.svg"
+            />
+            <div class="right-content">
+              <div class="user-details">
+                <span class="profile-name">1karo</span>
+                <span class="profile-username">@iiicaro</span>
+                <span class="post-timeby">• 20s</span>
+              </div>
+
+              <div class="post-content-text">
+                <p>margaery is so beaultiful tho u.u</p>
+              </div>
+
+              <div class="content-buttons noselect">
+                <i
+                  class="icon-button icon-xlarge highlight-blue material-symbols-outlined icon-not-filled"
+                  >chat_bubble</i
+                >
+                <i
+                  class="icon-button icon-xlarge highlight-green material-symbols-outlined icon-not-filled"
+                  >autorenew</i
+                >
+                <i
+                  onclick="changeState(this)"
+                  class="icon-button icon-xlarge like highlight-red material-symbols-outlined icon-not-filled"
+                  >favorite</i
+                >
+                <i
+                  class="icon-button icon-xlarge highlight-blue material-symbols-outlined icon-not-filled"
+                  >upload</i
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="post">
+            <!-- Image Post -->
+            <img
+              class="noselect"
+              height="60px"
+              src="https://media.istockphoto.com/id/1199279669/photo/big-eyed-naughty-obese-cat-behind-the-desk-with-red-hat-grey-color-british-sort-hair-cat.jpg?b=1&s=170667a&w=0&k=20&c=ohoTPRNiNT38ItF9sncBQqRXFG0Ra7TS8tnv0ZgWDec="
+            />
+            <div class="right-content">
+              <div class="user-details">
+                <span class="profile-name">cute cats being cats 😺</span>
+                <span class="profile-username">@gatinarios</span>
+                <span class="post-timeby">• 5h</span>
+              </div>
+
+              <div class="post-content-text post-content-image">
+                <p>Am I a joke to you????</p>
+                <img
+                  src="https://assets3.thrillist.com/v1/image/2509573/792x456/scale;webp=auto;jpeg_quality=60;progressive.jpg"
+                />
+              </div>
+
+              <div class="content-buttons noselect">
+                <i
+                  class="icon-button icon-xlarge highlight-blue material-symbols-outlined icon-not-filled"
+                  >chat_bubble</i
+                >
+                <i
+                  class="icon-button icon-xlarge highlight-green material-symbols-outlined icon-not-filled"
+                  >autorenew</i
+                >
+                <i
+                  onclick="changeState(this)"
+                  class="icon-button icon-xlarge like highlight-red material-symbols-outlined icon-not-filled"
+                  >favorite</i
+                >
+                <i
+                  class="icon-button icon-xlarge highlight-blue material-symbols-outlined icon-not-filled"
+                  >upload</i
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="post">
+            <!-- Image Post -->
+            <img
+              class="noselect"
+              src="https://avatars.dicebear.com/api/adventurer/mike.svg"
+            />
+            <div class="right-content">
+              <div class="user-details">
+                <span class="profile-name">Mike</span>
+                <span class="profile-username">@mikey</span>
+                <span class="post-timeby">• 23m</span>
+              </div>
+
+              <div class="post-content-text post-content-image">
+                <p>LETS TAKE EVERYTHING !!!!!!!!!!</p>
+                <img
+                  src="https://pbs.twimg.com/media/FeY9ECBaMAITqm5?format=jpg&name=medium"
+                />
+              </div>
+
+              <div class="content-buttons noselect">
+                <i
+                  class="icon-button icon-xlarge highlight-blue material-symbols-outlined icon-not-filled"
+                  >chat_bubble</i
+                >
+                <i
+                  class="icon-button icon-xlarge highlight-green material-symbols-outlined icon-not-filled"
+                  >autorenew</i
+                >
+                <i
+                  onclick="changeState(this)"
+                  class="icon-button icon-xlarge like highlight-red material-symbols-outlined icon-not-filled"
+                  >favorite</i
+                >
+                <i
+                  class="icon-button icon-xlarge highlight-blue material-symbols-outlined icon-not-filled"
+                  >upload</i
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="post">
+            <!-- Text Post -->
+            <img
+              class="noselect"
+              src="https://avatars.dicebear.com/api/adventurer/momom.svg"
+            />
+            <div class="right-content">
+              <div class="user-details">
+                <span class="profile-name">Mooom ⭐</span>
+                <span class="profile-username">@momom</span>
+                <span class="post-timeby">• 7h</span>
+              </div>
+
+              <div class="post-content-text">
+                <p>sagittarius... 🤨</p>
+              </div>
+
+              <div class="content-buttons noselect">
+                <i
+                  class="icon-button icon-xlarge highlight-blue material-symbols-outlined icon-not-filled"
+                  >chat_bubble</i
+                >
+                <i
+                  class="icon-button icon-xlarge highlight-green material-symbols-outlined icon-not-filled"
+                  >autorenew</i
+                >
+                <i
+                  onclick="changeState(this)"
+                  class="icon-button icon-xlarge like highlight-red material-symbols-outlined icon-not-filled"
+                  >favorite</i
+                >
+                <i
+                  class="icon-button icon-xlarge highlight-blue material-symbols-outlined icon-not-filled"
+                  >upload</i
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="post">
+            <!-- Image Post -->
+            <img
+              class="noselect"
+              src="https://avatars.dicebear.com/api/adventurer/kekelylima.svg"
+            />
+            <div class="right-content">
+              <div class="user-details">
+                <span class="profile-name">kekely</span>
+                <span class="profile-username">@kekely</span>
+                <span class="post-timeby">• 6m</span>
+              </div>
+
+              <div class="post-content-text post-content-image">
+                <p>SEARCH "VELMA" ON GOOGLE</p>
+                <img
+                  src="https://pbs.twimg.com/media/FeVouYoXEAcv5nF?format=jpg&name=large"
+                />
+              </div>
+
+              <div class="content-buttons noselect">
+                <i
+                  class="icon-button icon-xlarge highlight-blue material-symbols-outlined icon-not-filled"
+                  >chat_bubble</i
+                >
+                <i
+                  class="icon-button icon-xlarge highlight-green material-symbols-outlined icon-not-filled"
+                  >autorenew</i
+                >
+                <i
+                  onclick="changeState(this)"
+                  class="icon-button icon-xlarge like highlight-red material-symbols-outlined icon-not-filled"
+                  >favorite</i
+                >
+                <i
+                  class="icon-button icon-xlarge highlight-blue material-symbols-outlined icon-not-filled"
+                  >upload</i
+                >
+              </div>
+            </div>
+          </div>
+
+          <a class="icon-button noselect" href="#start">
+            <i class="material-symbols-outlined">arrow_circle_up</i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Side bar -->
+      <div class="right-panel">
+        <!-- Grid 4 rows -->
+        <!-- 4 div stacked vertically -->
+        <div class="search">
+          <i class="material-symbols-outlined search-icon">search</i>
+          <input
+            type="search"
+            name="search-bar"
+            class="search-bar"
+            placeholder="Search"
+          />
+        </div>
+
+        <div class="whats-happening">
+          <h3>What's happening?</h3>
+
+          <!-- News 1 -->
+          <div
+            class="news-button noselect"
+            onclick="goTo('events/russia-pipelines')"
+          >
+            <!-- Is a grid -->
+            <p class="news-page">World News - Today</p>
+            <p class="news-title">
+              Russia's Nord Stream pipelines leak gas into baltic sea
+            </p>
+            <img
+              src="https://www.reuters.com/resizer/dJcLZM5vlml7OUzmKXCoHRQSt9E=/240x240/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/PFA2GLSXIFPWVDF2ODY4W6X3MQ.jpg"
+              alt="Profile Picture"
+            />
+          </div>
+          <!-- News 2 -->
+          <div
+            class="news-button noselect"
+            onclick="goTo('events/pituca-on-the-red-carpet')"
+          >
+            <!-- Is a grid -->
+            <p class="news-page">Celebrity News - 2 days ago</p>
+            <p class="news-title">Pituca on the Red Carpet!</p>
+            <img
+              src="https://lucianosimoni.github.io/html-tribute/pituca.jpeg"
+              alt="Profile Picture"
+            />
+          </div>
+          <!-- News 3 -->
+          <div
+            class="news-button noselect"
+            onclick="goTo('events/rapper-coollio-died')"
+          >
+            <!-- Is a grid -->
+            <p class="news-page">Music - Yesterday</p>
+            <p class="news-title">Rapper Coolio has died aged 59</p>
+            <img
+              src="https://pbs.twimg.com/semantic_core_img/1575289530181189632/h98h_owb?format=png&name=120x120"
+              alt="Profile Picture"
+            />
+          </div>
+          <!-- News 4 -->
+          <div
+            class="news-button noselect"
+            onclick="goTo('events/celebrity-revealed')"
+          >
+            <!-- Is a grid -->
+            <p class="news-page">Celebrity News - Yesterday</p>
+            <p class="news-title">
+              I'm A Celebrity All Stars full lineup revealed
+            </p>
+            <img
+              src="https://pbs.twimg.com/media/FdvQ1ifXoAAhz0n?format=jpg&name=120x120"
+              alt="Profile Picture"
+            />
+          </div>
+          <!-- Show more -->
+          <div class="text-button noselect" onclick="goTo('explore')">
+            <span>Show more</span>
+          </div>
+        </div>
+
+        <div class="who-to-follow">
+          <h3>Who to follow</h3>
+
+          <!-- User 1 -->
+          <div
+            class="profile-button rect-button noselect"
+            onclick="goTo('users/potato')"
+          >
+            <!-- Is a grid -->
+            <img
+              src="https://avatars.dicebear.com/api/adventurer/kekelylima.svg"
+              alt="Profile Picture"
+            />
+            <span class="profile-name">kekely</span>
+            <span class="profile-username">@kekely</span>
+            <i class="material-symbols-outlined">navigate_next</i>
+          </div>
+          <!-- User 2 -->
+          <div
+            class="profile-button rect-button noselect"
+            onclick="goTo('users/cookies')"
+          >
+            <!-- Is a grid -->
+            <img
+              src="https://avatars.dicebear.com/api/adventurer/cookies.svg"
+              alt="Profile Picture"
+            />
+            <span class="profile-name">eRicoK</span>
+            <span class="profile-username">@cookies</span>
+            <i class="material-symbols-outlined">navigate_next</i>
+          </div>
+          <!-- User 3 -->
+          <div
+            class="profile-button rect-button noselect"
+            onclick="goTo('users/beabea')"
+          >
+            <!-- Is a grid -->
+            <img
+              src="https://avatars.dicebear.com/api/adventurer/beabea.svg"
+              alt="Profile Picture"
+            />
+            <span class="profile-name">bea123456789</span>
+            <span class="profile-username">@beabea</span>
+            <i class="material-symbols-outlined">navigate_next</i>
+          </div>
+          <!-- User 4 -->
+          <div
+            class="profile-button rect-button bottom-radius-normal noselect"
+            onclick="goTo('users/josiammm')"
+          >
+            <!-- Is a grid -->
+            <img
+              src="https://avatars.dicebear.com/api/adventurer/josiammm.svg"
+              alt="Profile Picture"
+            />
+            <span class="profile-name">josiasSaisj</span>
+            <span class="profile-username">@josiammm</span>
+            <i class="material-symbols-outlined">navigate_next</i>
+          </div>
+        </div>
+
+        <div class="footer">
+          <p>
+            Terms of Service, Privacy Policy, Cookie Policy, Accessibility, Ads
+            info, More <br />
+            © 2022 Trextter, Luci.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <span id="website-info"
+      >Twitter alike made using HTML and CSS (responsive) -
+      <a
+        target="_blank"
+        href="https://github.com/lucianosimoni/html-twitter-trextter"
+        >Luciano Simoni</a
+      >
+    </span>
+  </body>
+</html>
